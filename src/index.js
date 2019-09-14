@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import Landing from './pages/Landing';
+
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <div>
-                    Hello
-                </div>
+                <Landing />
+
             </div>
-        )
+        );
     }
 }
 
