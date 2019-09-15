@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 
 import Landing from './pages/Landing';
+import SignupForm from './pages/SignupForm';
+
+
+const routing = (
+    <Router>
+        <Switch>
+            <Route path="/signup" component={SignupForm} />
+            <Route path="/" component={Landing} />
+        </Switch>
+    </Router>
+)
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Landing />
 
             </div>
         );
     }
 }
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(routing, document.querySelector('#root'));
 
 export default App;

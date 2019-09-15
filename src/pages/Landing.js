@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Button from '../component/Button';
+import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
+
 
 class Landing extends Component {
     constructor(props) {
@@ -14,9 +16,9 @@ class Landing extends Component {
         const signInText = 'Sign in';
         return(
             <div>
-                <div>
+                <Link to="/signup">
                     <Button text={signupText} />
-                </div>
+                </Link>
                 <div>
                     <Button text={signInText} />
                 </div>
