@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# webpack related folder
+/dist
+
 # testing
 /coverage
 
