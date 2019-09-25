@@ -6,7 +6,8 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "index-bundle.js"
+    filename: "index-bundle.js",
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -24,8 +25,9 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
+    historyApiFallback: true, 
     proxy: {
-      "/": "http://localhost:3030"
+      "/api": "http://localhost:3030"
     }
   },
   plugins: [
