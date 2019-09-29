@@ -40,15 +40,20 @@ module.exports = {
         })
     },
 
-    // TODO: Need to filter the status (we only need NOT_STARTED, STARTED?, IN_PROGRESS, COMPLETED)
-    // Comment: Do we need event status? if we do, do we need started?
+    // TODO: Need to change the filtering algorithm to a better one
     update_event_status: (id, status) => {
-        connect.db.run(`UPDATE Event SET status = "${status}" WHERE id = ${id}`)
+        if(['IN_PROGRESS', 'COMPLETED'].includes(status))
+            connect.db.run(`UPDATE Event SET status = "${status}" WHERE id = ${id}`)
+        else
+            return false
     },
 
-    // TODO: Need to filter the status (we only need NO_REPLY, NOT_GOING, MAYBE, GOING)
+    // TODO: Need to change the filtering algorithm to a better one
     update_attendee_status: (id, email, status) => {
-        connect.db.run(`UPDATE Attendee SET status = "${status}" WHERE event_id = ${id} AND email = "${email}"`)
+        if(['NOT_GOING', 'MAYBE', 'GOING'].includes(status))
+            connect.db.run(`UPDATE Attendee SET status = "${status}" WHERE event_id = ${id} AND email = "${email}"`)
+        else
+            return false
     },
 
     query_user_exist: (user_id, callback) => {
@@ -67,34 +72,5 @@ module.exports = {
         connect.db.each(`SELECT first_name, last_name, email, status FROM Attendee WHERE event_id = ${event_id}`,(err, rows) => {
             callback(rows)
         })
-    },
-
-    // For Debugging Purposes
-    print_table: (table) => {
-        switch (table) {
-            case "User": {
-                connect.db.each('SELECT * FROM User', (err, row) => {
-                    if(err) throw err;
-                    console.log(row)
-                })
-                break;
-            }
-            case "Event": {
-                connect.db.each('SELECT * FROM Event', (err, row) => {
-                    if(err) throw err;
-                    console.log(row)
-                })
-                break;
-            }
-            case "Attendee": {
-                connect.db.each('SELECT * FROM Attendee', (err, row) => {
-                    if(err) throw err;
-                    console.log(row)
-                })
-                break;
-            }
-            default:
-                console.log("Table Does Not Exist")
-        }
     }
 }
