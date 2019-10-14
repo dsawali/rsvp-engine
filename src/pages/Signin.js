@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from '../component/Button';
 import BasicInput from '../component/BasicInput';
 
-import './Signin.css';
+import './Signin.scss';
 
 import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 
