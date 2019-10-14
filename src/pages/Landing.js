@@ -4,7 +4,7 @@ import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 import Button from '../component/Button';
 import Signin from './Signin';
 
-import './Landing.css';
+import './Landing.scss';
 
 
 class Landing extends Component {
