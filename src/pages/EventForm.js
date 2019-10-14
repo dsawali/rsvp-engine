@@ -30,7 +30,6 @@ class EventForm extends Component {
                     <p>Sign up</p>
                     <form className="form input" onSubmit={this.handleSubmit}>
                         <input type="text" name="event-name" placeholder="Event name" />
-                        <input type="text" name="lastname" placeholder="lastname" />
                         <input type="text" name="email" placeholder="email" />
                         <input type="text" name="password" placeholder="password" />
                         <input type="submit" value="submit" />
