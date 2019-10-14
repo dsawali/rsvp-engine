@@ -18,22 +18,15 @@ const routing = (
 )
 
 class App extends Component {
-    // For server testing purpose
-    componentDidMount(){
-        fetch('/hello')
-            .then(res => res.json())
-            .then(result => console.log(result))
-    }
-
     render() {
         return (
             <div className="App">
-                {routing}
+
             </div>
         );
     }
 }
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(routing, document.querySelector('#root'));
 
 export default App;
