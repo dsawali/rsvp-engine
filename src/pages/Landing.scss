@@ -1,0 +1,13 @@
+.landing-wrapper {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .signup-landing {
+        display: inline-block;
+    }
+    .signin-landing {
+        display: inline-block;
+    }
+}
+
