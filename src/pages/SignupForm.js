@@ -22,12 +22,7 @@ class SignupForm extends Component {
     render() {
         return (
             <div>
-                This is the signup form page
-                <Link to="/">
-                    <Button text={'go back home'} />
-                </Link>
-                <div className="signup form-block">
-                    <p>Sign up</p>
+                <div className="form-block">
                     <form className="form input" onSubmit={this.handleSubmit}>
                         <input type="text" name="firstname" placeholder="firstname" />
                         <input type="text" name="lastname" placeholder="lastname" />

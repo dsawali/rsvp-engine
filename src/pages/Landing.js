@@ -3,6 +3,7 @@ import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 
 import Button from '../component/Button';
 import Signin from './Signin';
+import Signup from './SignupForm';
 
 import './Landing.scss';
 
@@ -19,19 +20,22 @@ class Landing extends Component {
         const signInText = 'Sign in';
         return(
             <div className="landing-wrapper">
-                <label className="signup-landing">
-                    Sign up:
-                    <Link to="/signup">
-                        <Button text={signupText} />
-                    </Link>
-                </label>
-                <label className="signin-landing">
-                    Sign in:
-                    <Signin />
-                </label>
-                {/* <Link to="/signin">
-                    <Button text={signInText} />
-                </Link> */}
+                <div className="split left">
+                    <div className="center">
+                        <label className="signup-landing">
+                            Sign up:
+                            <Signup />
+                        </label>
+                    </div>
+                </div>
+                <div className="split right">
+                    <div className="center">
+                        <label className="signin-landing">
+                            Sign in:
+                            <Signin />
+                        </label>
+                    </div>
+                </div>
             </div>
         );
     }
