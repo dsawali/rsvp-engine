@@ -4,8 +4,8 @@ module.exports = {
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "email TEXT NOT NULL UNIQUE," +
                     "password TEXT NOT NULL," +
-                    "first_name TEXT," +
-                    "last_name TEXT" +
+                    "firstname TEXT," +
+                    "lastname TEXT" +
                 ");",
 
     event_table: "CREATE TABLE Event (" +
