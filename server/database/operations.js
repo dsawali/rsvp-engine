@@ -8,9 +8,9 @@ const mock_attendee_data = [1, "jane.doe@domain.com", "Jane", "Doe", 1, "tim.moo
 module.exports = {
     init_all_table: async () => {
         connect.db.serialize( () => {
-            connect.db.run(schema.user_table)
-                .run(schema.event_table)
-                .run(schema.attendee_table)
+            connect.db.run(schema.user)
+                .run(schema.event)
+                .run(schema.attendee)
         })
     },
 
