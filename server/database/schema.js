@@ -10,10 +10,13 @@ module.exports = {
 
     event: "CREATE TABLE Event (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "owner_id TEXT NOT NULL," +
                     "name TEXT NOT NULL," +
-                    "owner TEXT NOT NULL," +
-                    "status TEXT DEFAULT 'NOT_STARTED'" +
+                    "description TEXT," +
+                    "status TEXT DEFAULT 'NOT_STARTED'," +
                     //"attendees" + //Still not sure... let's see later
+                    "FOREIGN KEY (owner_id)" +
+                    "REFERENCES User (id) ON DELETE CASCADE" +
                 ");",
 
     attendee: "CREATE TABLE Attendee (" +
@@ -23,6 +26,6 @@ module.exports = {
                         "last_name TEXT NOT NULL," +
                         "status TEXT DEFAULT 'NO_REPLY'," + 
                         "FOREIGN KEY (event_id)" +
-                        "REFERENCES Event (id)" +
+                        "REFERENCES Event (id) ON DELETE CASCADE" +
                     ");"
 }
