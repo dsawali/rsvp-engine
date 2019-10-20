@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 
 import Button from '../component/Button';
-import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
+import Signin from './Signin';
+
+import './Landing.scss';
 
 
 class Landing extends Component {
@@ -15,13 +18,20 @@ class Landing extends Component {
         const signupText = 'Sign up';
         const signInText = 'Sign in';
         return(
-            <div>
-                <Link to="/signup">
-                    <Button text={signupText} />
-                </Link>
-                <div>
+            <div className="landing-wrapper">
+                <label className="signup-landing">
+                    Sign up:
+                    <Link to="/signup">
+                        <Button text={signupText} />
+                    </Link>
+                </label>
+                <label className="signin-landing">
+                    Sign in:
+                    <Signin />
+                </label>
+                {/* <Link to="/signin">
                     <Button text={signInText} />
-                </div>
+                </Link> */}
             </div>
         );
     }
