@@ -22,20 +22,25 @@ class Landing extends Component {
             <div className="landing-wrapper">
                 <div className="split left">
                     <div className="center">
-                        <label className="signup-landing">
-                            Sign up:
-                            <Signup />
-                        </label>
+                        <p className="signin-landing">
+                            Sign in:
+                        </p>
+                        <Signin />
+                       
                     </div>
                 </div>
                 <div className="split right">
                     <div className="center">
-                        <label className="signin-landing">
-                            Sign in:
-                            <Signin />
-                        </label>
+                        <p className="signup-landing">
+                            Or if you dont have an account, 
+                        </p>
+                        <Link to="/signup">
+                            <a href="#" className="link-signup">Sign up</a> 
+
+                        </Link>
                     </div>
                 </div>
+                
             </div>
         );
     }

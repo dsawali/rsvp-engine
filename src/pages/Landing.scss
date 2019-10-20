@@ -1,19 +1,16 @@
-.landing-wrapper {
-    // width: 100%;
-    height: 800px;
-    // top: 40%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    //     display: block;
-    // }
-    // .signin-landing {
-    //     display: block;
-    // }
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
 }
+
+
 .landing-wrapper {
-    padding-top: 20px;
+    height: 100%;
+    margin-top: 0;
     .split {
-        height: 90%;
+        height: 100%;
         width: 50%;
         position: fixed;
     }
@@ -21,9 +18,9 @@
 
 .left {
     left: 0;
-    background-color: red;
 }
 .right {
+    background-color: #4ed34e;
     right: 0;
 }
 
@@ -33,4 +30,30 @@
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+p {
+    &.signin-landing {
+        margin-bottom: 20px;
+        font-size: 25px;
+        text-align: left;
+        color: #4ed34e;
+    }
+    &.signup-landing {
+        margin-bottom: 20px;
+        font-size: 25px;
+        text-align: left;
+        color: #fff;
+    }
+}
+
+.link-signup {
+    font-size: 25px;
+    float: left;
+    color: #fff;
+    transition: .3s;
+
+    &:hover {
+        color: #259625;
+    }
 }

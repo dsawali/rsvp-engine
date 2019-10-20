@@ -1,0 +1,28 @@
+.inputtext {
+    border: none;
+    border-bottom: solid 1px black;
+    width: 240px;
+    height: 38px;
+    outline: none;
+    font-size: 17px;
+}
+
+
+.btn-submit {
+    border: solid 1px black;
+    float: left;
+    text-align: center;
+    margin-top: 15px;
+    height: 38px;
+    width: 90px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: .3s;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #4ed34e;
+        color: #fff;
+        border: none;
+    }
+}
