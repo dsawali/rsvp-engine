@@ -1,17 +1,17 @@
 const sqlite3 = require('sqlite3').verbose();
 
-module.exports = {
-    db: null,
-    connect: function () {
-        return this.db = new sqlite3.Database(':memory:',(err) => {
+class Database {
+    constructor() {
+        this.db = new sqlite3.Database(':memory:',(err) => {
             if (err) {
                 return console.error(err.message);
             }
             console.log('Connected to the in-memory SQlite database.');
         });
-    },
+        this.db.get('PRAGMA foreign_keys = ON');
+    }
 
-    destroy: function () {
+    destroy(){
         this.db.close((err) => {
             if (err) {
                 return console.error(err.message);
@@ -20,5 +20,7 @@ module.exports = {
         });
     }
 }
+
+module.exports = new Database();
 
 
