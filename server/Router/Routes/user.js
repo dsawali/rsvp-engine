@@ -22,4 +22,11 @@ router.post('/signup', (req, res) => {
         }).catch(err => res.json(err.message));
 })
 
+router.get('/:user_id(\\d+)', (req, res) => {
+    const user_id = req.params.user_id;
+    user.query_user_detail(user_id)
+        .then(rows => res.json(rows[0]))
+        .catch(err => res.json(err.message));
+})
+
 module.exports = router;

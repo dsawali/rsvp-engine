@@ -23,6 +23,15 @@ class User {
             })
         })
     }
+
+    query_user_detail(user_id) {
+        return new Promise((resolve, reject) => {
+            connect.db.all(`SELECT firstname, lastname, email FROM User WHERE id = ${user_id}`,(err, rows) => {
+                if (err) reject(err);
+                else resolve(rows);
+            })
+        })
+    }
 }
 
 module.exports = new User();
