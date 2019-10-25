@@ -10,8 +10,8 @@
   "scripts": {
     "app": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "server": "node ./server/server.js",
-    "server_dev": "nodemon ./server/server.js",
+    "server": "node ./src/server/server.js",
+    "server_dev": "nodemon ./src/server/server.js",
     "start": "npm run app & npm run server_dev"
   },
   "eslintConfig": {

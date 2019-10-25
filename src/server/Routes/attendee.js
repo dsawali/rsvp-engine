@@ -1,4 +1,4 @@
-const attendee = require('../../Model/Attendee');
+const attendee = require('../Model/Attendee');
 const express = require('express');
 
 var router = express.Router();
