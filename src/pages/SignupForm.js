@@ -21,19 +21,34 @@ class SignupForm extends Component {
 
     render() {
         return (
-            <div>
-                This is the signup form page
+            <div className="signup-wrapper">
                 <Link to="/">
-                    <Button text={'go back home'} />
+                    <button>go back home</button>
                 </Link>
-                <div className="signup form-block">
-                    <p>Sign up</p>
+                <div className="form-block signup-block">
+                    <h2 className="heading-main"> Join us and get started, </h2>
                     <form className="form input" onSubmit={this.handleSubmit}>
-                        <input type="text" name="firstname" placeholder="firstname" />
-                        <input type="text" name="lastname" placeholder="lastname" />
-                        <input type="text" name="email" placeholder="email" />
-                        <input type="text" name="password" placeholder="password" />
-                        <input type="submit" value="submit" />
+                        <label>
+                            First name:
+                            <input className="inputtext" type="text" name="firstname" placeholder="" />
+                        </label>
+                        <label>
+                            Last name:
+                            <input className="inputtext" type="text" name="lastname" placeholder="" />
+                        </label>
+                        <label>
+                            Email:
+                            <input className="inputtext" type="email" name="email" placeholder="" />
+                        </label>
+                        <label>
+                            Password:
+                            <input className="inputtext" type="password" name="password" placeholder="" />
+                        </label>
+                        <label>
+                            Confirm Password:
+                            <input className="inputtext" type="password" name="password" placeholder="" />
+                        </label>
+                        <input className="btn-submit" type="submit" value="Submit" />
                     </form>
                 </div>
             </div>

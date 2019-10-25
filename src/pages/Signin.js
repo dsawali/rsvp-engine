@@ -22,9 +22,9 @@ class Signin extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="email" placeholder="email" />
-                <input type="text" name="password" placeholder="password" />
-                <input type="submit" value="submit" />
+                <input type="text" className="inputtext" name="email" placeholder="Email" />
+                <input type="password" className="inputtext" name="password" placeholder="Password" />
+                <button type="submit" className="btn-submit" value="submit">Submit</button>
             </form>
         )
     }
