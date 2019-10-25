@@ -5,7 +5,7 @@ import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 import Landing from './pages/Landing';
 import SignupForm from './pages/SignupForm';
 import Signin from './pages/Signin';
-
+import Nav from './component/Navbar';
 
 const routing = (
     <Router>
@@ -17,16 +17,23 @@ const routing = (
     </Router>
 )
 
+const navigation = (
+    <Nav />
+)
+
 class App extends Component {
     render() {
         return (
-            <div className="App">
-
-            </div>
+            <>
+                <div className="App">
+                    { navigation}
+                    { routing }
+                </div>
+            </>
         );
     }
 }
 
-ReactDOM.render(routing, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector('#root'));
 
 export default App;

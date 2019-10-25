@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 
-import Button from '../component/Button';
+import Nav from '../component/Navbar';
 import Signin from './Signin';
-import Signup from './SignupForm';
+
 
 import './Landing.scss';
 
@@ -16,9 +16,11 @@ class Landing extends Component {
         }
     }
     render() {
-        const signupText = 'Sign up';
-        const signInText = 'Sign in';
         return(
+            <>
+            <div className="hero">
+                <p className="bruh">hello</p>
+            </div>
             <div className="landing-wrapper">
                 <div className="split left">
                     <div className="center">
@@ -26,7 +28,7 @@ class Landing extends Component {
                             Sign in:
                         </p>
                         <Signin />
-                       
+                    
                     </div>
                 </div>
                 <div className="split right">
@@ -39,9 +41,9 @@ class Landing extends Component {
 
                         </Link>
                     </div>
-                </div>
-                
+                </div>     
             </div>
+            </>
         );
     }
 }
