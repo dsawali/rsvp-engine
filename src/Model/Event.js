@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../config/db');
 const schema = "CREATE TABLE Event (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "owner_id TEXT NOT NULL," +

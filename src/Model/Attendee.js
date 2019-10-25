@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../config/db');
 const schema = "CREATE TABLE Attendee (" +
                         "event_id INTEGER NOT NULL," +
                         "email TEXT NOT NULL," +
