@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch ,Link, BrowserRouter as Router } from 'react-router-dom';
 
-import Landing from './pages/Landing';
-import SignupForm from './pages/SignupForm';
-import Signin from './pages/Signin';
-import Nav from './component/Navbar';
+import Landing from './client/pages/Landing';
+import SignupForm from './client/pages/SignupForm';
+import Signin from './client/pages/Signin';
+import Nav from './client/component/Navbar';
 
 const routing = (
     <Router>
