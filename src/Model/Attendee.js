@@ -1,43 +1,26 @@
 const db = require('../config/db');
-const schema = "CREATE TABLE Attendee (" +
-                        "event_id INTEGER NOT NULL," +
-                        "email TEXT NOT NULL," +
-                        "first_name TEXT NOT NULL," +
-                        "last_name TEXT NOT NULL," +
-                        "status TEXT DEFAULT 'NO_REPLY'," + 
-                        "FOREIGN KEY (event_id)" +
-                        "REFERENCES Event (id) ON DELETE CASCADE" +
-                    ");";
+const schema = `CREATE TABLE IF NOT EXISTS Attendees (
+                        id UUID PRIMARY KEY,
+                        event_id UUID NOT NULL,
+                        email TEXT UNIQUE,
+                        first_name TEXT NOT NULL,
+                        last_name TEXT NOT NULL,
+                        status TEXT DEFAULT 'NO_REPLY',
+                        FOREIGN KEY (event_id)
+                        REFERENCES Events (id) ON DELETE CASCADE
+                    )`;
 
 class User {
     constructor() {
-        db.db.run(schema);
+        db.query(schema);
     }
 
     insert_attendee_data(attendee_data){
-        return new Promise ((resolve, reject) => {
-            db.db.run('INSERT INTO Attendee (event_id, email, first_name, last_name) VALUES (?, ?, ?, ?)', attendee_data, (err) => {
-                if(err) reject(err);
-                else resolve('ATTENDEE HAS BEEN SUCCESSFULLY CREATED');
-            });
-        });
+        return db.query('INSERT INTO Attendees (id, event_id, email, first_name, last_name) VALUES ($1, $2, $3, $4, $5)', attendee_data);
     }
 
-    query_event_attendees(event_id){
-        return new Promise((resolve, reject) => {
-            db.db.all(`SELECT first_name, last_name, email, status FROM Attendee WHERE event_id = ${event_id}`,(err, rows) => {
-                if (err) reject(err);
-                else resolve(rows);
-            })
-        })
-    }
-
-    // TODO: Need to change the filtering algorithm to a better one
-    update_attendee_status(id, email, status){
-        if(['NOT_GOING', 'MAYBE', 'GOING'].includes(status))
-            db.db.run(`UPDATE Attendee SET status = "${status}" WHERE event_id = ${id} AND email = "${email}"`)
-        else
-            return false
+    query_attendee_detail(attendee_id){
+        return db.query(`SELECT * FROM Attendees WHERE id = $1`, [attendee_id]);
     }
 }
 
