@@ -6,8 +6,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-require('./Model/db')
-
 app.use('/user', require('./Routes/user'));
 app.use('/event', require('./Routes/event'))
 app.use('/attendee', require('./Routes/attendee'))
