@@ -25,8 +25,6 @@ class SignupForm extends Component {
         }
     }
 
-    // TODO: separate error
-
     handleFirstname = (e) => {
         const err = validation.firstname(e.target.value);
         
