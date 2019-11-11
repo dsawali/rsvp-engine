@@ -1,18 +1,11 @@
 import validator from 'validator';
 
-const errorStrings = {
-    firstName: {
-        noNumeric: 'First name can only contain alphabetic characters'
-    }
-}
-
 const validation = {
     firstname: (value) => {
         let errors = [];
+
         if(!validator.isAlpha(value)) {
-            if(!errors.includes(errorStrings.firstName.noNumeric)) {
-                errors.push(errorStrings.firstName.noNumeric);
-            }
+            errors.push('First name can only contain alphabetic characters');
         }
         if(validator.isEmpty(value)) {
             errors = [];

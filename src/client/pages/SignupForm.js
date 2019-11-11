@@ -35,7 +35,6 @@ class SignupForm extends Component {
             firstname: e.target.value,
             errors: errorCopy
         });
-        console.log(this.state);
     }
 
     handleLastname = (e) => {
@@ -48,9 +47,6 @@ class SignupForm extends Component {
             lastname: e.target.value,
             errors: errorCopy
         });
-
-        console.log(this.state);
-
     }
 
     handleEmail = (e) => {
@@ -146,8 +142,8 @@ class SignupForm extends Component {
                                     placeholder=""
                                     required 
                                 />
-                                {this.state.errors.lastname.map(x => 
-                                    <ErrorMessages message={x}/>
+                                {this.state.errors.lastname.map((x, index) => 
+                                    <ErrorMessages key={index} message={x}/>
                                 )}
                             </label>
                         </div>
@@ -164,8 +160,8 @@ class SignupForm extends Component {
                                     placeholder=""
                                     required 
                                 />
-                                {this.state.errors.email.map(x => 
-                                    <ErrorMessages message={x}/>
+                                {this.state.errors.email.map((x, index) => 
+                                    <ErrorMessages key={index} message={x}/>
                                 )}
                             </label>
                         </div>
@@ -182,8 +178,8 @@ class SignupForm extends Component {
                                     placeholder=""
                                     required
                                 />
-                                {this.state.errors.password.map(x => 
-                                    <ErrorMessages message={x}/>
+                                {this.state.errors.password.map((x, index) => 
+                                    <ErrorMessages key={index} message={x}/>
                                 )}
                             </label>
                         </div>
@@ -200,8 +196,8 @@ class SignupForm extends Component {
                                     placeholder=""
                                     required
                                 />
-                                {this.state.errors.confirmPassword.map(x => 
-                                    <ErrorMessages message={x}/>
+                                {this.state.errors.confirmPassword.map((x, index) => 
+                                    <ErrorMessages key={index} message={x}/>
                                 )}
                             </label>
                         </div>
