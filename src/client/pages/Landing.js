@@ -12,7 +12,6 @@ class Landing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
     }
     render() {
@@ -37,8 +36,7 @@ class Landing extends Component {
                             Or if you dont have an account, 
                         </p>
                         <Link to="/signup">
-                            <a href="#" className="link-signup">Sign up</a> 
-
+                            <span className="link-signup">Sign up</span> 
                         </Link>
                     </div>
                 </div>     

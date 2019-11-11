@@ -3,9 +3,8 @@
     top: 20%;
     left: 40%;
 }
-input {
-    display: block;
-    margin-bottom: 15px;
+.inputblock {
+    margin-top: 15px;
 }
 
 .inputtext {
@@ -16,6 +15,9 @@ input {
     }
 }
 
+input {
+    display: block;
+}
 
 label {
     font-size: 13px;
@@ -24,7 +26,7 @@ label {
     border: solid 1px black;
     float: left;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 30px;
     height: 38px;
     width: 90px;
     border-radius: 8px;
