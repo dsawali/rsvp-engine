@@ -1,26 +1,24 @@
-const sqlite3 = require('sqlite3').verbose();
+const Pool = require('pg').Pool;
+const pool = new Pool({
+    username: 'api_user',
+    host: 'localhost',
+    password: 'secret',
+    database: 'events_api',
+    port: 5432,
+})
 
 class Database {
-    constructor() {
-        this.db = new sqlite3.Database(':memory:',(err) => {
-            if (err) {
-                return console.error(err.message);
-            }
-            console.log('Connected to the in-memory SQlite database.');
-        });
-        this.db.get('PRAGMA foreign_keys = ON');
-    }
-
-    destroy(){
-        this.db.close((err) => {
-            if (err) {
-                return console.error(err.message);
-            }
-            console.log('Close the database connection.');
-        });
+    query(text, params) {
+        return new Promise((resolve, reject) => {
+            pool.query(text, params)
+              .then((res) => {
+                resolve(res);
+              })
+              .catch((err) => {
+                reject(err);
+              });
+        })
     }
 }
 
 module.exports = new Database();
-
-
