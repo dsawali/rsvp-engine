@@ -17,13 +17,15 @@ class Nav extends Component {
             <div className="navigation sticky">
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <Link to="/">
+                            <span>Home</span>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <span>About</span>
                     </li> 
                     <li>
-                        <a href="#">Sign in</a>
+                        <span>Sign in</span>
                     </li> 
                     <li>
                         <button className="btn-nav" type="button">Join</button>
